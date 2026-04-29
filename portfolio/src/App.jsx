@@ -4,6 +4,11 @@ import Navbar from './components/Navbar'
 import footer from './components/footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import Projects from './pages/Projects'
+import PersonalDetails from './pages/PersonalDetails'
+import contactMe from './pages/contactMe'
+import ProjectDetails from './pages/ProjectDetails'
+
 
 
 const App = () =>  {
@@ -11,7 +16,15 @@ const App = () =>  {
   return (
     <BrowserRouter>
      <Navbar />
-     <Home />
+      <Routes>
+        <Route path='/' element={<Home  />}></Route>
+        <Route path='/projects' element={<Projects  />}></Route>
+        <Route path='/projects/:projectID' element={<ProjectDetails />}>
+        </Route>
+        <Route path='/personal_info' element={<PersonalDetails />}></Route>
+        <Route path='/contact_me' element={<contactMe />}></Route>
+      </Routes>
+    
      <footer />
     </BrowserRouter>
   )
