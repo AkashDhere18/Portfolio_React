@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import projectList from '../projects'
 
 const ProjectDetails = () => {
@@ -62,6 +62,17 @@ const ProjectDetails = () => {
         <div className="border-top pt-3">
           <Outlet />
         </div> */}
+        <div className="d-flex gap-3 mb-4">
+
+          <Link to="likes" className="btn btn-outline-success">👍 Like</Link>
+
+          <Link to="comments" className="btn btn-outline-success">💬 Comments</Link>
+
+        </div>
+
+        <div className="border-top pt-3">
+          <Outlet />
+        </div>
 
       </div>
     </div>
